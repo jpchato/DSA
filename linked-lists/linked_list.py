@@ -92,14 +92,16 @@ class LinkedList:
 
 if __name__ == '__main__':
 
-    llist = LinkedList(['b','c'])
+    llist = LinkedList(['a', 'b','c', 'd', 'e'])
+    print(llist)
+    
+    llist.remove_node('a')
     print(llist)
 
-    llist.add_before('b', Node('a'))
+    llist.remove_node('e')
     print(llist)
 
-    llist.add_before('b', Node('aa'))
-    llist.add_before('c', Node('bb'))
+    llist.remove_node('c')
     print(llist)
 
-    llist.add_before('n', Node('m'))
+    llist.remove_node('a')
