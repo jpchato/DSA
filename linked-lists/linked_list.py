@@ -56,52 +56,50 @@ class LinkedList:
         
         raise Exception("Node with data '%s' not found" % target_node_data)
 
-    
+    def add_before(self, target_node_data, new_node):
+        if self.head is None:
+            raise Exception('List is empty')
+
+        if self.head.data == target_node_data:
+            return self.add_first(new_node)
+
+        prev_node = self.head
+        for node in self:
+            if node.data == target_node_data:
+                prev_node.next = new_node
+                new_node.next = node
+                return
+            prev_node = node
+        
+        raise Exception("Node with data '%s' not found" % target_node_data)
+
+    def remove_node(self, target_node_data):
+        if self.head is None:
+            raise Exception('List is empty')
+
+        if self.head.data == target_node_data:
+            self.head = self.head.next
+            return
+        
+        previous_node = self.head
+        for node in self:
+            if node.data == target_node_data:
+                previous_node.next = node.next
+                return
+            previous_node = node
+
+        raise Exception("Node with data '%s' not found" % target_node_data)
+
 if __name__ == '__main__':
-    pass
-    # add_after demo ***************
-    # llist = LinkedList()
-    # llist.add_after('a', Node('b'))
-    # print(llist)
 
-    # llist = LinkedList(['a', 'b', 'c', 'd'])
-    # print(llist)
+    llist = LinkedList(['b','c'])
+    print(llist)
 
-    # llist.add_after('c', Node('cc'))
-    # print(llist)
+    llist.add_before('b', Node('a'))
+    print(llist)
 
-    # llist.add_after('f', Node('g'))
-    # print(llist)
-    # add_after demo *******************
+    llist.add_before('b', Node('aa'))
+    llist.add_before('c', Node('bb'))
+    print(llist)
 
-    # llist = LinkedList(['a', 'b', 'c', 'd'])
-    # llist.add_last(Node('e'))
-    # print(llist)
-    # llist.add_last(Node('f'))
-    # print(llist)
-
-
-
-    # llist = LinkedList()
-    # llist.add_first(Node('b'))
-    # llist.add_first(Node('a'))
-    # print(llist)
-
-
-
-    # llist = LinkedList(['a', 'b', 'c', 'd', 'e'])
-    # print(llist)
-
-    # for node in llist:
-    #     print(node)
-
-
-    # llist = LinkedList()
-    # first_node = Node('a')
-    # llist.head = first_node
-    
-    # second_node = Node('b')
-    # third_node = Node('c')
-    # first_node.next = second_node
-    # second_node.next = third_node
-    # print(llist)
+    llist.add_before('n', Node('m'))
