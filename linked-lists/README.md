@@ -31,3 +31,8 @@
 * When it comes to element lookup, lists perform much better than linked lists. When you know which element you want to access, lists can perform this operation in O(1) time. Linked lists take O(n) because you need to traverse the whole list to find the element
 * When searching for a specific element, both lists and LL perform similarly with a time complexity of O(n). Both cases you need to iterate through the entire list to find the element you're looking for
 
+# [Medium Article](https://medium.com/basecs/whats-a-linked-list-anyway-part-1-d8b7e6508b9d)
+* Linked lists are linear data structures
+* The biggest differentiator between arrays and linked lists is the way that they use memory in our machines.
+* Arrays are static data structures and linked lists are dynamic data structures
+* 
